@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phorn Construction | Building Your Future</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #f39c12;
+            --primary-dark: #e67e22;
+            --secondary: #2c3e50;
+            --light: #ecf0f1;
+            --dark: #34495e;
+            --white: #fff;
+            --black: #222;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Kantumruy Pro', sans-serif;
+            overflow-x: hidden;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Moul', serif;
+            font-weight: normal;
+        }
+
+        .model-font {
+            font-family: 'Moulpali', serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            color: var(--secondary);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 20px 0;
+        }
+
+        header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        header.scrolled .logo {
+            color: var(--secondary);
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        header.scrolled nav ul li a {
+            color: var(--secondary);
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        header.scrolled .mobile-menu-btn {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--white);
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+
+        /* About Section */
+        .about {
+            background: var(--light);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-features {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        /* Projects Section */
+        .projects {
+            background: var(--light);
+        }
+
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-card:hover .project-img img {
+            transform: scale(1.1);
+        }
+
+        .project-overlay h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .project-overlay p {
+            color: var(--light);
+            margin-bottom: 20px;
+            transform: translateY(20px);
+            transition: var(--transition);
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .project-overlay a {
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-overlay h3,
+        .project-card:hover .project-overlay p,
+        .project-card:hover .project-overlay a {
+            transform: translateY(0);
+        }
+
+        /* Team Section */
+        .team {
+            background: var(--white);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-img {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .member-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .team-member:hover .member-img img {
+            transform: scale(1.1);
+        }
+
+        .member-info {
+            padding: 20px;
+        }
+
+        .member-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--secondary);
+        }
+
+        .member-info p {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .member-social a {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .member-social a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .testimonials .section-title {
+            color: var(--white);
+        }
+
+        .testimonials .section-title:after {
+            background: var(--primary);
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-slide {
+            padding: 0 50px;
+            display: none;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .testimonial-content {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border: 3px solid var(--primary);
+        }
+
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 10px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--white);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-top: 5px;
+        }
+
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .contact-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--light);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .contact-social a:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-5px);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Kantumruy Pro', sans-serif;
+            transition: var(--transition);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: var(--light);
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-col p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--light);
+            opacity: 0.8;
+            transition: var(--transition);
+            display: block;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .footer-newsletter input {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-family: 'Kantumruy Pro', sans-serif;
+        }
+
+        .footer-newsletter .btn {
+            width: 100%;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Language Toggle */
+        .language-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            background: var(--white);
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .language-toggle input {
+            display: none;
+        }
+
+        .language-toggle label {
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .language-toggle input:checked + label {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--secondary);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .mobile-menu.active {
+            left: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        .mobile-menu ul li {
+            margin: 20px 0;
+        }
+
+        .mobile-menu ul li a {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .mobile-menu ul li a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-img, .about-text {
+                flex: none;
+                width: 100%;
+            }
+            
+            .about-img {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px 0;
+            }
+            
+            .footer-col {
+                margin-bottom: 30px;
+            }
+        }
+
+        /* Khmer Language Styles */
+        body.khmer .en-text {
+            display: none;
+        }
+
+        body:not(.khmer) .kh-text {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="https://via.placeholder.com/50x50?text=PC" alt="Phorn Construction Logo">
+                <span class="en-text">Phorn Construction</span>
+                <span class="kh-text model-font">ផន កំណាយ</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="en-text">Home</a><a href="#home" class="kh-text">ទំព័រដើម</a></li>
+                    <li><a href="#about" class="en-text">About</a><a href="#about" class="kh-text">អំពីយើង</a></li>
+                    <li><a href="#services" class="en-text">Services</a><a href="#services" class="kh-text">សេវាកម្ម</a></li>
+                    <li><a href="#projects" class="en-text">Projects</a><a href="#projects" class="kh-text">គម្រោង</a></li>
+                    <li><a href="#contact" class="en-text">Contact</a><a href="#contact" class="kh-text">ទំនាក់ទំនង</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="#home" class="en-text">Home</a><a href="#home" class="kh-text">ទំព័រដើម</a></li>
+            <li><a href="#about" class="en-text">About</a><a href="#about" class="kh-text">អំពីយើង</a></li>
+            <li><a href="#services" class="en-text">Services</a><a href="#services" class="kh-text">សេវាកម្ម</a></li>
+            <li><a href="#projects" class="en-text">Projects</a><a href="#projects" class="kh-text">គម្រោង</a></li>
+            <li><a href="#contact" class="en-text">Contact</a><a href="#contact" class="kh-text">ទំនាក់ទំនង</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="en-text">Building Your Future</h1>
+            <h1 class="kh-text model-font">កសាងអនាគតរបស់អ្នក</h1>
+            <p class="en-text">We deliver quality construction services with integrity and professionalism</p>
+            <p class="kh-text">យើងផ្តល់សេវាកម្មសំណង់ដែលមានគុណភាពជាមួយនឹងសុចរិតភាព និងវិជ្ជាជីវៈ</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn en-text">Get a Quote</a>
+                <a href="#contact" class="btn kh-text">ស្នើសុំតម្លៃ</a>
+                <a href="#about" class="btn btn-secondary en-text">Learn More</a>
+                <a href="#about" class="btn btn-secondary kh-text">អានបន្ថែម</a>
+            </div>
+        </div>
+        <a href="#about" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title en-text" data-aos="fade-up">About Us</h2>
+            <h2 class="section-title kh-text model-font" data-aos="fade-up">អំពីយើង</h2>
+            <div class="about-content">
+                <div class="about-img" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a7b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Construction Team">
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <p class="en-text">Phorn Construction is a leading construction company with over 15 years of experience in delivering high-quality construction projects across Cambodia. Our team of skilled professionals is committed to excellence in every project we undertake.</p>
+                    <p class="kh-text">ផន កំណាយ គឺជាក្រុមហ៊ុនសំណង់ឈានមុខគេដែលមានបទពិសោធន៍ជាង ១៥ឆ្នាំក្នុងការផ្តល់គម្រោងសំណង់ដែលមានគុណភាពខ្ពស់នៅទូទាំងប្រទេសកម្ពុជា។ ក្រុមអ្នកវិជ្ជាជីវៈដែលមានជំនាញរបស់យើងប្តេជ្ញាចិត្តចំពោះភាពអស្ចារ្យក្នុងគម្រោងគ្រប់យ៉ាងដែលយើងធ្វើ។</p>
+                    <div class="about-features">
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="feature-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div>
+                                <h4 class="en-text">Quality Assurance</h4>
+                                <h4 class="kh-text">ធានាគុណភាព</h4>
+                                <p class="en-text">We never compromise on quality in any of our projects.</p>
+                                <p class="kh-text">យើងមិនដែលអនុញ្ញាតឱ្យគុណភាពធ្លាក់ចុះនៅក្នុងគម្រោងរបស់យើងទេ។</p>
+                            </div>
+                        </div>
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="feature-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="en-text">On-Time Delivery</h4>
+                                <h4 class="kh-text">ប្រគល់តាមពេលវេលា</h4>
+                                <p class="en-text">We complete projects within the agreed timeframe.</p>
+                                <p class="kh-text">យើងបញ្ចប់គម្រោងក្នុងរយៈពេលដែលបានព្រមព្រៀងគ្នា។</p>
+                            </div>
+                        </div>
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="feature-icon">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <div>
+                                <h4 class="en-text">Competitive Pricing</h4>
+                                <h4 class="kh-text">តម្លៃប្រកួតប្រជែង</h4>
+                                <p class="en-text">We offer the best value for your investment.</p>
+                                <p class="kh-text">យើងផ្តល់តម្លៃល្អបំផុតសម្រាប់ការវិនិយោគរបស់អ្នក។</p>
+                            </div>
+                        </div>
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <h4 class="en-text">Expert Team</h4>
+                                <h4 class="kh-text">ក្រុមអ្នកជំនាញ</h4>
+                                <p class="en-text">Our professionals have years of experience.</p>
+                                <p class="kh-text">អ្នកវិជ្ជាជីវៈរបស់យើងមានបទពិសោធន៍ច្រើនឆ្នាំ។</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title en-text" data-aos="fade-up">Our Services</h2>
+            <h2 class="section-title kh-text model-font" data-aos="fade-up">សេវាកម្មរបស់យើង</h2>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Residential Construction">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="en-text">Residential Construction</h3>
+                        <h3 class="kh-text">សំណង់លំនៅដ្ឋាន</h3>
+                        <p class="en-text">We build dream homes with precision and care, tailored to your needs.</p>
+                        <p class="kh-text">យើងសាងសង់ផ្ទះសុបិន្ដដោយភាពត្រឹមត្រូវ និងការយកចិត្តទុកដាក់ តាមតម្រូវការរបស់អ្នក។</p>
+                    </div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Commercial Construction">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="en-text">Commercial Construction</h3>
+                        <h3 class="kh-text">សំណង់ពាណិជ្ជកម្ម</h3>
+                        <p class="en-text">Modern commercial spaces designed for functionality and aesthetics.</p>
+                        <p class="kh-text">អគារពាណិជ្ជកម្មទំនើបដែលបានរចនាសម្រាប់មុខងារ និងសោភ័ណភាព។</p>
+                    </div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Renovation">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="en-text">Renovation</h3>
+                        <h3 class="kh-text">ជួសជុលនិងធ្វើថ្មី</h3>
+                        <p class="en-text">Transform your space with our expert renovation services.</p>
+                        <p class="kh-text">ផ្លាស់ប្តូរទំហំរបស់អ្នកជាមួយនឹងសេវាកម្មជួសជុលរបស់អ្នកជំនាញរបស់យើង។</p>
+                    </div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Interior Design">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="en-text">Interior Design</h3>
+                        <h3 class="kh-text">រចនាខាងក្នុង</h3>
+                        <p class="en-text">Beautiful interior spaces that reflect your style and personality.</p>
+                        <p class="kh-text">ចន្លោះខាងក្នុងដ៏ស្រស់ស្អាតដែលឆ្លុះបញ្ចាំងពីរចនាបថ និងបុគ្គលិកលក្ខណៈរបស់អ្នក។</p>
+                    </div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Project Management">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="en-text">Project Management</h3>
+                        <h3 class="kh-text">ការគ្រប់គ្រងគម្រោង</h3>
+                        <p class="en-text">Comprehensive project management from conception to completion.</p>
+                        <p class="kh-text">ការគ្រប់គ្រងគម្រោងយ៉ាងទូលំទូលាយពីការគិតគូររហូតដល់បញ្ចប់។</p>
+                    </div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Consulting">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="en-text">Consulting</h3>
+                        <h3 class="kh-text">ការប្រឹក្សា</h3>
+                        <p class="en-text">Expert advice to guide your construction decisions.</p>
+                        <p class="kh-text">ដំបូន្មានពីអ្នកជំនាញដើម្បីណែនាំការសំរេចចិត្តសំណង់របស់អ្នក។</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title en-text" data-aos="fade-up">Our Projects</h2>
+            <h2 class="section-title kh-text model-font" data-aos="fade-up">គម្រោងរបស់យើង</h2>
+            <div class="projects-filter" data-aos="fade-up">
+                <button class="filter-btn active en-text" data-filter="all">All</button>
+                <button class="filter-btn active kh-text" data-filter="all">ទាំងអស់</button>
+                <button class="filter-btn en-text" data-filter="residential">Residential</button>
+                <button class="filter-btn kh-text" data-filter="residential">លំនៅដ្ឋាន</button>
+                <button class="filter-btn en-text" data-filter="commercial">Commercial</button>
+                <button class="filter-btn kh-text" data-filter="commercial">ពាណិជ្ជកម្ម</button>
+                <button class="filter-btn en-text" data-filter="renovation">Renovation</button>
+                <button class="filter-btn kh-text" data-filter="renovation">ជួសជុល</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="residential" data-aos="fade-up">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Modern Villa">
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="en-text">Modern Villa</h3>
+                        <h3 class="kh-text">វីឡាទំនើប</h3>
+                        <p class="en-text">A luxurious modern villa with panoramic views</p>
+                        <p class="kh-text">វីឡាទំនើបដ៏អស្ចារ្យជាមួយនឹងទិដ្ឋភាពដ៏ល្អ</p>
+                        <a href="#" class="btn en-text">View Project</a>
+                        <a href="#" class="btn kh-text">មើលគម្រោង</a>
+                    </div>
+                </div>
+                <div class="project-card" data-category="commercial" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Office Building">
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="en-text">Office Building</h3>
+                        <h3 class="kh-text">អគារការិយាល័យ</h3>
+                        <p class="en-text">Contemporary office space for a tech company</p>
+                        <p class="kh-text">កន្លែងការិយាល័យសម័យទំនើបសម្រាប់ក្រុមហ៊ុនបច្ចេកវិទ្យា</p>
+                        <a href="#" class="btn en-text">View Project</a>
+                        <a href="#" class="btn kh-text">មើលគម្រោង</a>
+                    </div>
+                </div>
+                <div class="project-card" data-category="residential" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Townhouse Complex">
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="en-text">Townhouse Complex</h3>
+                        <h3 class="kh-text">បន្ទប់ជាន់ជុំ</h3>
+                        <p class="en-text">A community of elegant townhouses</p>
+                        <p class="kh-text">សហគមន៍នៃផ្ទះប៉ុស្តិ៍ដ៏ឆើតឆាយ</p>
+                        <a href="#" class="btn en-text">View Project</a>
+                        <a href="#" class="btn kh-text">មើលគម្រោង</a>
+                    </div>
+                </div>
+                <div class="project-card" data-category="renovation" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1600566752225-3f2fe3f8f6d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Heritage Restoration">
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="en-text">Heritage Restoration</h3>
+                        <h3 class="kh-text">ការជួសជុលបេតិកភណ្ឌ</h3>
+                        <p class="en-text">Restoration of a historic colonial building</p>
+                        <p class="kh-text">ការជួសជុលអគារប្រវត្តិសាស្ត្រនៃសម័យអាណានិគម</p>
+                        <a href="#" class="btn en-text">View Project</a>
+                        <a href="#" class="btn kh-text">មើលគម្រោង</a>
+                    </div>
+                </div>
+                <div class="project-card" data-category="commercial" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Shopping Mall">
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="en-text">Shopping Mall</h3>
+                        <h3 class="kh-text">ផ្សារទំនើប</h3>
+                        <p class="en-text">Large-scale shopping and entertainment complex</p>
+                        <p class="kh-text">ផ្សារទំនើប និងកន្លែងកម្សាន្តដ៏ធំ</p>
+                        <a href="#" class="btn en-text">View Project</a>
+                        <a href="#" class="btn kh-text">មើលគម្រោង</a>
+                    </div>
+                </div>
+                <div class="project-card" data-category="residential" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Luxury Apartment">
+                    </div>
+                    <div class="project-overlay">
+                        <h3 class="en-text">Luxury Apartment</h3>
+                        <h3 class="kh-text">អាផាតមិនផ្ទះល្វែងថ្លៃ</h3>
+                        <p class="en-text">High-end apartment building with premium amenities</p>
+                        <p class="kh-text">អាគារអាផាតមិនថ្នាក់ខ្ពស់ដែលមានសេវាកម្មពិសេស</p>
+                        <a href="#" class="btn en-text">View Project</a>
+                        <a href="#" class="btn kh-text">មើលគម្រោង</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <h2 class="section-title en-text" data-aos="fade-up">Our Team</h2>
+            <h2 class="section-title kh-text model-font" data-aos="fade-up">ក្រុមរបស់យើង</h2>
+            <div class="team-grid">
+                <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+                    <div class="member-img">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="John Doe">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="en-text">John Doe</h3>
+                        <h3 class="kh-text model-font">ជន ដូអ៊ី</h3>
+                        <p class="en-text">Founder & CEO</p>
+                        <p class="kh-text">អ្នកបង្កើត និងអគ្គនាយក</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+                    <div class="member-img">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Jane Smith">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="en-text">Jane Smith</h3>
+                        <h3 class="kh-text model-font">ជេន ស្មីត</h3>
+                        <p class="en-text">Project Manager</p>
+                        <p class="kh-text">អ្នកគ្រប់គ្រងគម្រោង</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member" data-aos="fade-up" data-aos-delay="300">
+                    <div class="member-img">
+                        <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Michael Johnson">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="en-text">Michael Johnson</h3>
+                        <h3 class="kh-text model-font">ម៉ាយខឹល ចនសុន</h3>
+                        <p class="en-text">Lead Architect</p>
+                        <p class="kh-text">អ្នកស្ថាបត្យកម្មជាន់ខ្ពស់</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member" data-aos="fade-up" data-aos-delay="400">
+                    <div class="member-img">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=988&q=80" alt="Sarah Williams">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="en-text">Sarah Williams</h3>
+                        <h3 class="kh-text model-font">សារ៉ា វីលៀម</h3>
+                        <p class="en-text">Interior Designer</p>
+                        <p class="kh-text">អ្នករចនាខាងក្នុង</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title en-text" data-aos="fade-up">Client Testimonials</h2>
+            <h2 class="section-title kh-text model-font" data-aos="fade-up">មតិអតិថិជន</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <p class="en-text">"Phorn Construction exceeded all our expectations. Their attention to detail and commitment to quality is unmatched. Our project was completed on time and within budget."</p>
+                        <p class="kh-text">"ផន កំណាយ លើសពីការរំពឹងទុករបស់យើងទាំងអស់។ ការយកចិត្តទុកដាក់របស់ពួកគេលើរឿងលម្អិត និងការប្តេជ្ញាចិត្តចំពោះគុណភាពគឺគ្មានគូប្រៀប។ គម្រោងរបស់យើងត្រូវបានបញ្ចប់ទាន់ពេលវេលា និងក្នុងថវិកា។"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David Wilson">
+                        </div>
+                        <div class="author-info">
+                            <h4 class="en-text">David Wilson</h4>
+                            <h4 class="kh-text model-font">ដេវីដ វីលសុន</h4>
+                            <p class="en-text">CEO, Wilson Properties</p>
+                            <p class="kh-text">អគ្គនាយក, វីលសុន ផ្រូពធី</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p class="en-text">"Working with Phorn Construction was a pleasure. Their team was professional, responsive, and delivered exceptional results. I would highly recommend them."</p>
+                        <p class="kh-text">"ការធ្វើការជាមួយផន កំណាយ គឺជាការសប្បាយរីករាយ។ ក្រុមរបស់ពួកគេមានវិជ្ជាជីវៈ ឆ្លើយតប និងផ្តល់លទ្ធផលដ៏អស្ចារ្យ។ ខ្ញុំនឹងណែនាំពួកគេយ៉ាងខ្លាំង។"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Lisa Chen">
+                        </div>
+                        <div class="author-info">
+                            <h4 class="en-text">Lisa Chen</h4>
+                            <h4 class="kh-text model-font">លីសា ឆេន</h4>
+                            <p class="en-text">Director, Chen Holdings</p>
+                            <p class="kh-text">អគ្គនាយក, ឆេន ហូលឌីង</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p class="en-text">"The quality of workmanship is outstanding. Phorn Construction transformed our vision into reality with precision and care. Truly a top-tier construction company."</p>
+                        <p class="kh-text">"គុណភាពនៃការងារគឺអស្ចារ្យ។ ផន កំណាយ បានផ្លាស់ប្តូរទស្សនវិស័យរបស់យើងទៅជាការពិតដោយភាពត្រឹមត្រូវ និងការយកចិត្តទុកដាក់។ ពិតជាក្រុមហ៊ុនសំណង់ថ្នាក់ខ្ពស់។"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Robert Kim">
+                        </div>
+                        <div class="author-info">
+                            <h4 class="en-text">Robert Kim</h4>
+                            <h4 class="kh-text model-font">រូបឺត គីម</h4>
+                            <p class="en-text">Founder, Kim Developments</p>
+                            <p class="kh-text">អ្នកបង្កើត, គីម ឌីវេឡូបម៉ង់</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <div class="slider-dot active" data-slide="0"></div>
+                    <div class="slider-dot" data-slide="1"></div>
+                    <div class="slider-dot" data-slide="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title en-text" data-aos="fade-up">Contact Us</h2>
+            <h2 class="section-title kh-text model-font" data-aos="fade-up">ទំនាក់ទំនងជាមួយយើង</h2>
+            <div class="contact-container">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3 class="en-text">Get in Touch</h3>
+                    <h3 class="kh-text">ទាក់ទងមកយើង</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4 class="en-text">Address</h4>
+                                <h4 class="kh-text">អាសយដ្ឋាន</h4>
+                                <p class="en-text">123 Construction St, Phnom Penh, Cambodia</p>
+                                <p class="kh-text">១២៣ ផ្លូវសំណង់, ភ្នំពេញ, កម្ពុជា</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4 class="en-text">Phone</h4>
+                                <h4 class="kh-text">ទូរស័ព្ទ</h4>
+                                <p class="en-text">+855 12 345 678</p>
+                                <p class="kh-text">+៨៥៥ ១២ ៣៤៥ ៦៧៨</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4 class="en-text">Email</h4>
+                                <h4 class="kh-text">អ៊ីមែល</h4>
+                                <p>info@phornconstruction.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4 class="en-text">Working Hours</h4>
+                                <h4 class="kh-text">ម៉ោងធ្វើការ</h4>
+                                <p class="en-text">Mon-Fri: 8:00 AM - 5:00 PM</p>
+                                <p class="kh-text">ច័ន្ទ-សុក្រ៖ ៨:០០ព្រឹក - ៥:០០ល្ងាច</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form" data-aos="fade-left">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" class="en-text" required>
+                            <input type="text" placeholder="ឈ្មោះរបស់អ្នក" class="kh-text" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" class="en-text" required>
+                            <input type="email" placeholder="អ៊ីមែលរបស់អ្នក" class="kh-text" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject" class="en-text" required>
+                            <input type="text" placeholder="ប្រធានបទ" class="kh-text" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" class="en-text" required></textarea>
+                            <textarea placeholder="សាររបស់អ្នក" class="kh-text" required></textarea>
+                        </div>
+                        <button type="submit" class="btn en-text">Send Message</button>
+                        <button type="submit" class="btn kh-text">ផ្ញើសារ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3 class="en-text">About Us</h3>
+                    <h3 class="kh-text">អំពីយើង</h3>
+                    <p class="en-text">Phorn Construction is a leading construction company dedicated to delivering exceptional quality and service in every project we undertake.</p>
+                    <p class="kh-text">ផន កំណាយ គឺជាក្រុមហ៊ុនសំណង់ឈានមុខគេដែលបានប្តេជ្ញាចិត្តផ្តល់គុណភាព និងសេវាកម្មដ៏អស្ចារ្យក្នុងគម្រោងគ្រប់យ៉ាងដែលយើងធ្វើ។</p>
+                </div>
+                <div class="footer-col">
+                    <h3 class="en-text">Quick Links</h3>
+                    <h3 class="kh-text">តំណភ្ជាប់រហ័ស</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home" class="en-text">Home</a><a href="#home" class="kh-text">ទំព័រដើម</a></li>
+                        <li><a href="#about" class="en-text">About</a><a href="#about" class="kh-text">អំពីយើង</a></li>
+                        <li><a href="#services" class="en-text">Services</a><a href="#services" class="kh-text">សេវាកម្ម</a></li>
+                        <li><a href="#projects" class="en-text">Projects</a><a href="#projects" class="kh-text">គម្រោង</a></li>
+                        <li><a href="#contact" class="en-text">Contact</a><a href="#contact" class="kh-text">ទំនាក់ទំនង</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="en-text">Services</h3>
+                    <h3 class="kh-text">សេវាកម្ម</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="en-text">Residential Construction</a><a href="#" class="kh-text">សំណង់លំនៅដ្ឋាន</a></li>
+                        <li><a href="#" class="en-text">Commercial Construction</a><a href="#" class="kh-text">សំណង់ពាណិជ្ជកម្ម</a></li>
+                        <li><a href="#" class="en-text">Renovation</a><a href="#" class="kh-text">ជួសជុលនិងធ្វើថ្មី</a></li>
+                        <li><a href="#" class="en-text">Interior Design</a><a href="#" class="kh-text">រចនាខាងក្នុង</a></li>
+                        <li><a href="#" class="en-text">Project Management</a><a href="#" class="kh-text">ការគ្រប់គ្រងគម្រោង</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="en-text">Newsletter</h3>
+                    <h3 class="kh-text">ព័ត៌មាន</h3>
+                    <p class="en-text">Subscribe to our newsletter for the latest updates.</p>
+                    <p class="kh-text">ជាវព័ត៌មានរបស់យើងសម្រាប់ព័ត៌មានចុងក្រោយ។</p>
+                    <div class="footer-newsletter">
+                        <input type="email" placeholder="Your Email" class="en-text">
+                        <input type="email" placeholder="អ៊ីមែលរបស់អ្នក" class="kh-text">
+                        <button class="btn en-text">Subscribe</button>
+                        <button class="btn kh-text">ជាវ</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="en-text">2025 - All rights reserved. Provided by Mr. Phekdey PHORN</p>
+                <p class="kh-text">2025 - រក្សារ​សិទ្ធិ​គ្រប់​យ៉ាង ដោយលោក ផន ភក្ដី។</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <input type="radio" id="english" name="language" checked>
+        <label for="english" class="en-text">EN</label>
+        <input type="radio" id="khmer" name="language">
+        <label for="khmer" class="kh-text">ខ្មែរ</label>
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenuClose = document.querySelector('.mobile-menu-close');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Back to top button
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+
+        // Testimonial slider
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const sliderDots = document.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            testimonialSlides.forEach(slide => slide.classList.remove('active'));
+            sliderDots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonialSlides[index].classList.add('active');
+            sliderDots[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        sliderDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+
+        // Auto slide change
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % testimonialSlides.length;
+            showSlide(currentSlide);
+        }, 5000);
+
+        // Project filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Language toggle
+        const languageToggle = document.querySelector('.language-toggle');
+        const englishRadio = document.getElementById('english');
+        const khmerRadio = document.getElementById('khmer');
+
+        englishRadio.addEventListener('change', () => {
+            if (englishRadio.checked) {
+                document.body.classList.remove('khmer');
+            }
+        });
+
+        khmerRadio.addEventListener('change', () => {
+            if (khmerRadio.checked) {
+                document.body.classList.add('khmer');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
